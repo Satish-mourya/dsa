@@ -1,1 +1,1 @@
- // cout<<" ";
+ cout<<arr[i]<<"," <<arr[j]<<endl;
