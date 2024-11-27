@@ -31,6 +31,19 @@ Node* insertAtEnd(Node* head, int data){
     return head;
 }
 
+Node* insertAtposition(Node* head,int data,int position){
+    Node* new_node=new Node(data);
+    Node* temp =head;
+    for(int i=0; i<position;i++){
+        temp=temp->next;
+    }
+
+    new_node->next=temp->next;
+    temp->next=new_node;
+
+    return head;
+}
+
 int main(){
      Node* head=new Node(45);
      Node* temp=head;
@@ -41,6 +54,8 @@ int main(){
      }
      cout<<endl;
      head=insertAtEnd(head,60);
+     head=insertAtposition(head,80,0);
+     head=insertAtposition(head,80,0);
      temp=head;
      while(temp!=NULL){
         cout<<temp->data<<" ";
