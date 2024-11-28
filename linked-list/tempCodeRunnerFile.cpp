@@ -1,1 +1,1 @@
-    // head->next=NULL;
+head=deleteAtEnd(head);
