@@ -1,81 +1,75 @@
-// implement it with array
-#include<iostream>
-using namespace std;
-class Stack {
+ #include<iostream>
+ using namespace std;
+
+ class Stack
+ {
+    int * arr;
+    int size;
+    int top;
 
     public:
-    int *arr; // points to index of arr
-    int size; // size of the array
-    int top;  // points to top element of array
-    
-    Stack(int s){
-        size=s;  // size of stack will be (s)
-        top=-1;  // pointing to the top element
-        arr=new int[s]; // array is formed with size s
+    //constructor
+
+    Stack(int s)
+    {
+        size=s;
+        top=-1;
+        arr=new int[s];
     }
 
-    //push
-
+    // push
     void push(int value){
         if(top==size-1){
-            cout<<"overflow"<<endl;
-            return;
-        }else{
-
-        top++;
-        arr[top]=value;
-
-        cout<<"pushed "<<value<<" into the stack"<<endl;
-        }
-    }
-    // pop
-    void pop(){
-        if(top==-1){
-            cout<<"stack underflow";
+            cout<<"Stack overfflow\n";
             return;
         }
         else{
-            cout<<"value is popped:"<<arr[top]<<endl;
-            top--;
-            
+            top++;
+            arr[top]=value;
+            cout<<"pushed "<<value<<" into stack\n";
         }
     }
 
-    //peek
-
-    int peek(){
+    // void pop
+    void pop(){
+       if(top==-1){
+        cout<<"Stack underflow";
+       } else{
+        cout<<arr[top]<<" is removed"<<endl;
+        top--;
+       }
+    }
+    // peek
+    int peek()
+    {
         if(top==-1){
-            cout<<"stack empty"<<endl;
+            cout<<"stack is empty";
             return -1;
-        }else{
-            return arr[top];
+        }
+        else{
+            cout<<arr[top]<<endl;
         }
     }
-    //IssEmpty
+    // isempty
 
-    bool IsEmpty(){
+    bool isEmpty(){
         return top==-1;
     }
-    //IsSize
-
-    int IsSize(){     // return the number of element present in stack
+    
+    int isSize(){
         return top+1;
     }
-
-};
+ };
 
  int main(){
     Stack s(5);
-    s.push(5);
+    s.push(4);
+    
     s.push(3);
     s.push(6);
-    s.push(6);
+    s.push(4);
+    s.push(4);
+    s.push(4);
     s.pop();
-    s.pop();
-    s.pop();
-    s.pop();
-    s.push(6);
-    cout<<s.peek()<<endl;
-    cout<<s.IsEmpty()<<endl;
-    cout<<s.peek()<<endl;
+    
  }
