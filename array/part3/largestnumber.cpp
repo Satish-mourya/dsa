@@ -13,3 +13,10 @@ int main(){
     cout<<"maximun number is "<<key;
     return 0;
 }
+
+
+// range based loop also exist
+
+// for(int num:arr){
+
+// }
