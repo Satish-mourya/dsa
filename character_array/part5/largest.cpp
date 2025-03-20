@@ -32,7 +32,7 @@ int main(){
     }
 
     cout<<largest<<endl;
-    cout<<"length :"<<largest_len;
+    cout<<"length : "<<largest_len;
     return 0;
 
 }
